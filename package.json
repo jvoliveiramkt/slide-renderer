@@ -1,0 +1,13 @@
+{
+  "name": "slide-renderer",
+  "version": "1.0.0",
+  "description": "Microserviço para renderizar slides HTML como PNG via Puppeteer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^21.6.1"
+  }
+}
