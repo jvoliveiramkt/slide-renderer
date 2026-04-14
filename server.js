@@ -68,7 +68,10 @@ app.post('/render', async (req, res) => {
     });
 
     const base64 = screenshot.toString('base64');
-    res.json({ image: base64 });
+
+    // Devolve image + qualquer campo extra recebido no body (slideIndice, legenda, tema, etc)
+    const { html: _html, width: _w, height: _h, ...extras } = req.body;
+    res.json({ image: base64, ...extras });
 
   } catch (err) {
     console.error('Erro ao renderizar slide:', err.message);
